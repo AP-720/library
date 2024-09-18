@@ -5,7 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F4D06F;
+    background-color: #ECF8F8;
 }
 
 h2 {
@@ -20,25 +20,100 @@ p {
 .main-container {
    min-height: 100vh;
    width: 70%;
-   /* border: 1px red solid; */
    padding: 25px 100px;
    background-color: #ffffff;
 }
 
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: center;
     padding-bottom: 25px;
 }
 
+.header button {
+    height: 3.5rem;
+    width: 25%;
+    font-size: 1.5rem;
+    background-color: #E6BEAE;
+    border: #DA9F87 5px solid;
+    border-radius: 20px;
+    color: #ffffff
+}
+
+.header button:hover {
+    border: #E6AEBA 5px solid;
+}
+
+/* Library Section */
+
 .book-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content:space-between
 }
 
 .card {
-    background-color: #FFF8F0;
+    background-color: #EEE4E1;
     border-radius: 20px;
     padding: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* Add Book Modal + Form */
+
+dialog {
+    border: #E6AEBA 5px solid;
+    border-radius: 20px;
+    width: 35%;
+    height: fit-content;
+}
+
+dialog::backdrop {
+    background-color: rgb(236, 248, 248, 0.8);
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 20px 50px;
+    display: grid;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+label {
+    font-weight: 700;
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #E6BEAE;
+    padding: 5px 15px ;
+}
+
+form > button {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #E6AEBA;
+    color: #ffffff;
+    border: 5px solid #E6AEBA;
+    font-size: 1.3rem;
+}
+
+form > button:hover {
+    border: 5px solid #DA9F87;
 }

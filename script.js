@@ -1,5 +1,14 @@
 const myLibrary = [];
 
+const newBook = document.querySelector("[data-new-book]");
+const modal = document.querySelector("[data-modal]");
+const cancelButton = document.querySelector("[data-cancel]");
+const addButton = document.querySelector("[data-add]");
+
+newBook.addEventListener("click", () => {
+    modal.showModal();
+});
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -13,6 +22,8 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 myLibrary.push(new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', false));
+myLibrary.push(new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', false));
+myLibrary.push(new Book('Ulysses', 'James Joyce', '736 pages', true));
 myLibrary.push(new Book('Ulysses', 'James Joyce', '736 pages', true));
 myLibrary.push(new Book('Crime and Punishment', 'Fyodor Dostoevsky', '720 pages', true));
 
