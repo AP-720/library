@@ -58,7 +58,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content:space-between
+    justify-content: center;
 }
 
 .card {
