@@ -40,13 +40,12 @@ h1 {
 }
 
 .header button {
-    height: 3.5rem;
-    width: 25%;
     font-size: 1.5rem;
     background-color: #E6BEAE;
     border: #DA9F87 5px solid;
     border-radius: 20px;
-    color: #ffffff
+    color: #ffffff;
+    padding: 10px 5%;
 }
 
 .header button:hover {
