@@ -44,6 +44,13 @@ function displayBooks() {
 
       bookContainer.appendChild(card);
 });
+
+    const removeButton = document.querySelectorAll('.remove-btn');
+    removeButton.forEach(button => addRemoveBookListener(button));
+
+    const toggleRead = document.querySelectorAll(".update-read-btn");
+    toggleRead.forEach(button => updateRead(button));
+
 }
 
 function addRemoveBookListener(button) {
@@ -53,7 +60,8 @@ function addRemoveBookListener(button) {
         let bookNumber = selectedCard.getAttribute("data-book-num");
         myLibrary.splice(`${bookNumber}`, 1)
      
-        selectedCard.remove();            
+        selectedCard.remove();
+        displayBooks()            
 });
 };
 
@@ -102,21 +110,14 @@ addBookBtn.addEventListener("submit", (e) => {
 
     document.getElementById("add-book-form").reset();
     modal.close();
+
+    displayBooks()
 });
 
 // Remove Book and Update Read Buttons for the preloaded books
 
 window.onload=function() {
-    const removeBook = document.querySelectorAll(".remove-btn");
-    const toggleRead = document.querySelectorAll(".update-read-btn");
-    
-    removeBook.forEach(button => {
-        addRemoveBookListener(button);
-    })
-
-    toggleRead.forEach(button => {
-        updateRead(button);
-    })
+    displayBooks()
 };
 
 // myLibrary.push(new Book('The Hobbit', 'J.R.R. Tolkien', '295 pages', false));
