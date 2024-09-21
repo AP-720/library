@@ -102,11 +102,6 @@ addBookBtn.addEventListener("submit", (e) => {
 
     addBookToLibrary(title, author, pages, read);
     displayBooks();
-    const removeButton = document.querySelectorAll('.remove-btn');
-    removeButton.forEach(button => addRemoveBookListener(button));
-
-    const toggleRead = document.querySelectorAll(".update-read-btn");
-    toggleRead.forEach(button => updateRead(button));
 
     document.getElementById("add-book-form").reset();
     modal.close();
