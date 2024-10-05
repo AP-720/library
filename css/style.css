@@ -1,134 +1,134 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ECF8F8;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #ecf8f8;
 }
 
 h2 {
-    margin: 0;
-    padding-bottom: .5rem;
+	margin: 0;
+	padding-bottom: 0.5rem;
 }
 
 p {
-    margin: 0;
-    padding-bottom: .5rem;
+	margin: 0;
+	padding-bottom: 0.5rem;
 }
 
 .main-container {
-   min-height: 100vh;
-   width: 70%;
-   padding: 25px 100px;
-   background-color: #ffffff;
+	min-height: 100vh;
+	width: 70%;
+	padding: 25px 100px;
+	background-color: #ffffff;
 }
 
 /* Header */
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 h1 {
-    font-size: 3.5rem;
-    text-align: center;
-    padding-bottom: 25px;
+	font-size: 3.5rem;
+	text-align: center;
+	padding-bottom: 25px;
 }
 
 .header button {
-    font-size: 1.5rem;
-    background-color: #E6BEAE;
-    border: #DA9F87 5px solid;
-    border-radius: 20px;
-    color: #ffffff;
-    padding: 10px 5%;
+	font-size: 1.5rem;
+	background-color: #e6beae;
+	border: #da9f87 5px solid;
+	border-radius: 20px;
+	color: #ffffff;
+	padding: 10px 5%;
 }
 
 .header button:hover {
-    border: #E6AEBA 5px solid;
+	border: #e6aeba 5px solid;
 }
 
 /* Library Section */
 
 .book-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
 }
 
 .card {
-    background-color: #EEE4E1;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: #eee4e1;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .card-btn {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    /* padding-top: 10px; */
+	display: flex;
+	justify-content: center;
+	gap: 10px;
 }
 
 .card button {
-    font-size: 1.1rem;
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: 5px solid #DA9F87;
-    background-color: #ECF8F8;  
+	font-size: 1.1rem;
+	padding: 5px 15px;
+	border-radius: 20px;
+	border: 5px solid #da9f87;
+	background-color: #ecf8f8;
 }
 
 /* Add Book Modal + Form */
 
 dialog {
-    border: #E6AEBA 5px solid;
-    border-radius: 20px;
-    width: 35%;
-    height: fit-content;
+	border: #e6aeba 5px solid;
+	border-radius: 20px;
+	width: 35%;
+	height: fit-content;
 }
 
 dialog::backdrop {
-    background-color: rgb(236, 248, 248, 0.8);
+	background-color: rgb(236, 248, 248, 0.8);
 }
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 form {
-    padding: 20px 50px;
-    display: grid;
-    gap: 10px;
-    font-size: 1.1rem;
+	padding: 20px 50px;
+	display: grid;
+	gap: 10px;
+	font-size: 1.1rem;
 }
 
 label {
-    font-weight: 700;
+	font-weight: 700;
 }
 
-input[type=text], input[type=number] {
-    width: 100%;
-    border-radius: 20px;
-    border: 1px solid #E6BEAE;
-    padding: 5px 15px ;
+input[type="text"],
+input[type="number"] {
+	width: 100%;
+	border-radius: 20px;
+	border: 1px solid #e6beae;
+	padding: 5px 15px;
 }
 
 form > button {
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #E6AEBA;
-    color: #ffffff;
-    border: 5px solid #E6AEBA;
-    font-size: 1.3rem;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #e6aeba;
+	color: #ffffff;
+	border: 5px solid #e6aeba;
+	font-size: 1.3rem;
 }
 
 form > button:hover {
-    border: 5px solid #DA9F87;
+	border: 5px solid #da9f87;
 }
