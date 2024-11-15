@@ -59,11 +59,11 @@ class Library {
 			bookContainer.appendChild(card);
 		});
 
-		// remove EventListener
+		// Add remove button EventListener
 		document.querySelectorAll(".remove-btn").forEach((button) => {
 			button.addEventListener("click", (event) => this.removeBook(event));
 		});
-		// update EventListener
+		// Add update EventListener
 		document.querySelectorAll(".update-read-btn").forEach((button) => {
 			button.addEventListener("click", (event) => this.toggleReadStatus(event));
 		});
@@ -91,8 +91,8 @@ class Library {
 	}
 
 	closeModal() {
-		this.addBookForm.resest();
-		this.modal.closel();
+		this.addBookForm.reset();
+		this.modal.close();
 	}
 
 	handleAddBook(event) {
