@@ -112,6 +112,10 @@ label {
 	font-weight: 700;
 }
 
+input:focus {
+	outline: 1px solid #0004ff;
+}
+
 input[type="text"],
 input[type="number"] {
 	width: 100%;
@@ -131,4 +135,12 @@ form > button {
 
 form > button:hover {
 	border: 5px solid #da9f87;
+}
+
+input:invalid:focus {
+	background-color: #fe8484;
+}
+
+input:valid {
+	background-color: rgb(199, 226, 157);
 }

@@ -19,8 +19,10 @@ class Library {
 		this.addButton = document.querySelector("[data-new-book]");
 		this.addBookBtn = document.getElementById("add-book-form");
 
+		this.formValidator = new FormValidation();
+
 		this.addButton.addEventListener("click", () => this.showModal());
-		this.cancelButton.addEventListener("click", () => this.modal.close());
+		this.cancelButton.addEventListener("click", () => this.closeModal());
 		this.addBookBtn.addEventListener("submit", (e) => this.handleAddBook(e));
 
 		window.onload = () => {
@@ -87,16 +89,25 @@ class Library {
 	}
 
 	showModal() {
+		this.formValidator.validateForm(); // Validate on modal open
 		this.modal.showModal();
 	}
 
 	closeModal() {
-		this.addBookForm.reset();
+		this.addBookBtn.reset();
 		this.modal.close();
 	}
 
 	handleAddBook(event) {
 		event.preventDefault();
+
+		// Manually validate all inputs
+		this.formValidator.validateForm();
+
+		// If the form is invalid, stop submission
+		if (!this.addBookBtn.checkValidity()) {
+			return;
+		}
 
 		const title = document.getElementById("title").value;
 		const author = document.getElementById("author").value;
@@ -105,8 +116,79 @@ class Library {
 
 		this.addBook(title, author, pages, read);
 
-		this.addBookBtn.reset();
-		this.modal.close();
+		this.closeModal();
+	}
+}
+
+class FormValidation {
+	constructor() {
+		this.title = document.getElementById("title");
+		this.author = document.getElementById("author");
+		this.pages = document.getElementById("pages");
+
+		this.handleEventListeners();
+	}
+
+	handleEventListeners() {
+		this.title.addEventListener("input", () => {
+			if (!this.title.value.trim()) {
+				this.title.setCustomValidity("Enter the title of the book.");
+			} else {
+				this.title.setCustomValidity("");
+			}
+			this.title.reportValidity();
+		});
+
+		this.author.addEventListener("input", () => {
+			if (!this.author.value.trim()) {
+				this.author.setCustomValidity("Enter the author of the book.");
+			} else {
+				this.author.setCustomValidity("");
+			}
+			this.author.reportValidity();
+		});
+
+		this.pages.addEventListener("input", () => {
+			const value = Number(this.pages.value);
+			if (isNaN(value) || value < 1) {
+				this.pages.setCustomValidity(
+					"Enter a valid number of pages (1 or more)."
+				);
+			} else {
+				this.pages.setCustomValidity("");
+			}
+			this.pages.reportValidity();
+		});
+	}
+
+	validateForm() {
+		// Title validation
+		// trim prevents empty space causing false validation
+		if (!this.title.value.trim()) {
+			this.title.setCustomValidity("Enter the title of the book.");
+		} else {
+			this.title.setCustomValidity("");
+		}
+		this.title.reportValidity();
+
+		// Author validation
+		if (!this.author.value.trim()) {
+			this.author.setCustomValidity("Enter the author of the book.");
+		} else {
+			this.author.setCustomValidity("");
+		}
+		this.author.reportValidity();
+
+		// Pages validation
+		const value = Number(this.pages.value);
+		if (isNaN(value) || value < 1) {
+			this.pages.setCustomValidity(
+				"Enter a valid number of pages (1 or more)."
+			);
+		} else {
+			this.pages.setCustomValidity("");
+		}
+		this.pages.reportValidity();
 	}
 }
 
